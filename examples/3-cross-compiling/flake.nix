@@ -39,13 +39,13 @@
 
         # the packages in `nix build .#packages.<system>.<name>`
         packages = {
-          # nix build .#static-resources
-          # nix build .#packages.x86_64-linux.static-resources
-          static-resources = (rustPkgs.workspace.static-resources {}).bin;
+          # nix build .#cross-compiling
+          # nix build .#packages.x86_64-linux.cross-compiling
+          cross-compiling = (rustPkgs.workspace.cross-compiling {}).bin;
         };
 
         # nix build
-        defaultPackage = packages.static-resources;
+        defaultPackage = packages.cross-compiling;
       }
     );
 }
