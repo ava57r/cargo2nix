@@ -31,6 +31,7 @@
         # create nixpkgs that contains rustBuilder from cargo2nix overlay
         pkgs = import nixpkgs {
           inherit system;
+          target = "aarch64-unknown-linux-gnu";
           crossSystem = pkgsBuild.lib.systems.examples.aarch64-multiplatform;
           overlays = [(import "${cargo2nix}/overlay")
                       rust-overlay.overlay];
