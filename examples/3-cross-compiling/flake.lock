@@ -7,7 +7,7 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "narHash": "sha256-jm+pNUIrg4f73zgLehrJW5LDh87EkH5KYSQD5OXHO9s=",
+        "narHash": "sha256-Chw1iqM3HbQTSVtfEpymy+rXU/mALANmRvterI8tNr0=",
         "path": "../../",
         "type": "path"
       },
