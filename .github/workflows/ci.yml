@@ -52,8 +52,14 @@ jobs:
             --override-input cargo2nix github:cargo2nix/cargo2nix?rev=$GITHUB_SHA
           nix build ./examples/3-cross-compiling# \
             --override-input cargo2nix github:cargo2nix/cargo2nix?rev=$GITHUB_SHA
-          # nix build ./examples/4-independent-packaging# \
-          #   --override-input cargo2nix github:cargo2nix/cargo2nix?rev=$GITHUB_SHA
+          if [[ $RUNNER_OS == Linux ]]; then
+          nix build ./examples/4-independent-packaging# \
+            --override-input cargo2nix github:cargo2nix/cargo2nix?rev=$GITHUB_SHA \
+          else
+          nix build ./examples/4-independent-packaging# \
+            --override-input cargo2nix github:cargo2nix/cargo2nix?rev=$GITHUB_SHA \
+            --override-input nixpkgs github:nixos/nixpkgs/nixos-21.05-darwin
+          fi
 
       - name: use dev shell
         # enter the shell with no environment paths and verify that toolchain is available
