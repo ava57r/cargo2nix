@@ -48,15 +48,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1636769694,
-        "narHash": "sha256-2dGVwaISVglbAJ1rZ17JHxm/hHf4ezMMgEkjVb+3dp0=",
-        "owner": "oxalica",
+        "lastModified": 1637053362,
+        "narHash": "sha256-Ndm32NRBi99R2GyrF+cjmHh5yiW7XScsYSF9L/n502g=",
+        "owner": "positron-solutions",
         "repo": "rust-overlay",
-        "rev": "2b97caa27af3693bdb46d70ebc2b76f03dacb72a",
+        "rev": "3db81cfde292efff37a376eb6c555a6fd734fd91",
         "type": "github"
       },
       "original": {
-        "owner": "oxalica",
+        "owner": "positron-solutions",
+        "ref": "minus-one-nix-offset",
         "repo": "rust-overlay",
         "type": "github"
       }
