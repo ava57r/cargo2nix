@@ -4,7 +4,7 @@
     # Use the github URL for real packages
     # cargo2nix.url = "github:cargo2nix/cargo2nix/master";
     flake-utils.url = "github:numtide/flake-utils";
-    rust-overlay.url = "github:oxalica/rust-overlay";
+    rust-overlay.url = "github:positron-solutions/rust-overlay/minus-one-nix-offset";
     rust-overlay.inputs.nixpkgs.follows = "nixpkgs";
     rust-overlay.inputs.flake-utils.follows = "flake-utils";
     nixpkgs.url = "github:nixos/nixpkgs?ref=release-21.05";
@@ -32,9 +32,9 @@
         pkgs = import nixpkgs {
           inherit system;
 
-          # crossSystem = {
-          #   config = "aarch64-unknown-linux-gnu";
-          # };
+          crossSystem = {
+            config = "aarch64-unknown-linux-gnu";
+          };
           # crossSystem = {
           #   config = "wasm32-unknown-wasi";
           #   system = "wasm32-wasi";
@@ -48,8 +48,8 @@
         rustPkgs = pkgs.rustBuilder.makePackageSet' {
           rustChannel = "1.56.1";
           packageFun = import ./Cargo.nix;
-          # target = "aarch64-unknown-linux-gnu";
-          target = "wasm32-wasi";
+          target = "aarch64-unknown-linux-gnu";
+          # target = "wasm32-wasi";
         };
 
       in rec {
