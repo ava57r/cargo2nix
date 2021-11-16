@@ -27,7 +27,7 @@ in rustBuilder.makePackageSet (extraArgs // {
   packageOverrides = packageOverrides pkgs;
   buildRustPackages = buildPackages.rustBuilder.makePackageSet (extraArgs // {
     inherit packageFun rustChannel;
-    target = (rustBuilder.rustLib.rustTriple stdenv.buildPlatform);
+    target = null;
     packageOverrides = packageOverrides buildPackages;
   });
 })
