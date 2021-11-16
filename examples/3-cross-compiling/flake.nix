@@ -32,18 +32,14 @@
         pkgs = import nixpkgs {
           inherit system;
 
-          # target = "aarch64-unknown-linux-gnu";
           # crossSystem = {
           #   config = "aarch64-unknown-linux-gnu";
           # };
-
-          target = "wasm32-wasi";
-          crossSystem = {
-            config = "wasm32-unknown-unknown-wasi";
-            platform = "wasm32-wasi";
-            useLLVM = true;
-          };
-
+          # crossSystem = {
+          #   config = "wasm32-unknown-wasi";
+          #   system = "wasm32-wasi";
+          #   useLLVM = true;
+          # };
           overlays = [(import "${cargo2nix}/overlay")
                       rust-overlay.overlay];
         };
@@ -52,6 +48,8 @@
         rustPkgs = pkgs.rustBuilder.makePackageSet' {
           rustChannel = "1.56.1";
           packageFun = import ./Cargo.nix;
+          # target = "aarch64-unknown-linux-gnu";
+          target = "wasm32-wasi";
         };
 
       in rec {
