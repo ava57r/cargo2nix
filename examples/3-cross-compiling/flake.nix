@@ -31,8 +31,19 @@
         # create nixpkgs that contains rustBuilder from cargo2nix overlay
         pkgs = import nixpkgs {
           inherit system;
-          target = "aarch64-unknown-linux-gnu";
-          crossSystem = pkgsBuild.lib.systems.examples.aarch64-multiplatform;
+
+          # target = "aarch64-unknown-linux-gnu";
+          # crossSystem = {
+          #   config = "aarch64-unknown-linux-gnu";
+          # };
+
+          target = "wasm32-wasi";
+          crossSystem = {
+            config = "wasm32-unknown-unknown-wasi";
+            platform = "wasm32-wasi";
+            useLLVM = true;
+          };
+
           overlays = [(import "${cargo2nix}/overlay")
                       rust-overlay.overlay];
         };
