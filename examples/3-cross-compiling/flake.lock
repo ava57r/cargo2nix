@@ -7,7 +7,7 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "narHash": "sha256-x/o7FxX4M4X78CCvioi7HLxTgep3j2ZydbR1jMAOGTI=",
+        "narHash": "sha256-qUFxU/h26ddv0XBelexjf6w8jWrGJ9kS9+y00ruBR98=",
         "path": "../../",
         "type": "path"
       },
@@ -96,16 +96,15 @@
         ]
       },
       "locked": {
-        "lastModified": 1637053362,
-        "narHash": "sha256-Ndm32NRBi99R2GyrF+cjmHh5yiW7XScsYSF9L/n502g=",
-        "owner": "positron-solutions",
+        "lastModified": 1637288133,
+        "narHash": "sha256-x5XWEK333KEhy2WL3TafE1vSa8/A1sGdbirTIV2bmSc=",
+        "owner": "oxalica",
         "repo": "rust-overlay",
-        "rev": "3db81cfde292efff37a376eb6c555a6fd734fd91",
+        "rev": "ccc467eff80b2fbb8000cf425e999ef14fbe200c",
         "type": "github"
       },
       "original": {
-        "owner": "positron-solutions",
-        "ref": "minus-one-nix-offset",
+        "owner": "oxalica",
         "repo": "rust-overlay",
         "type": "github"
       }
@@ -120,16 +119,15 @@
         ]
       },
       "locked": {
-        "lastModified": 1637053362,
-        "narHash": "sha256-Ndm32NRBi99R2GyrF+cjmHh5yiW7XScsYSF9L/n502g=",
-        "owner": "positron-solutions",
+        "lastModified": 1637288133,
+        "narHash": "sha256-x5XWEK333KEhy2WL3TafE1vSa8/A1sGdbirTIV2bmSc=",
+        "owner": "oxalica",
         "repo": "rust-overlay",
-        "rev": "3db81cfde292efff37a376eb6c555a6fd734fd91",
+        "rev": "ccc467eff80b2fbb8000cf425e999ef14fbe200c",
         "type": "github"
       },
       "original": {
-        "owner": "positron-solutions",
-        "ref": "minus-one-nix-offset",
+        "owner": "oxalica",
         "repo": "rust-overlay",
         "type": "github"
       }
