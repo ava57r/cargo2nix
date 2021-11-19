@@ -56,22 +56,39 @@ jobs:
           nix build ./examples/4-independent-packaging# \
             --override-input cargo2nix github:cargo2nix/cargo2nix?rev=$GITHUB_SHA
           else
-          sleep 60
-          nix build ./examples/1-hello-world# \
-            --override-input cargo2nix github:cargo2nix/cargo2nix?rev=$GITHUB_SHA \
-            --override-input nixpkgs github:nixos/nixpkgs/nixos-21.05-darwin
-          sleep 60
+          sleep 30
+          nix flake lock ./examples/1-hello-world# \
+            --update-input cargo2nix github:cargo2nix/cargo2nix?rev=$GITHUB_SHA
+          sleep 30
+          nix flake lock ./examples/1-hello-world# \
+            --update-input nixpkgs github:nixos/nixpkgs/nixos-21.05-darwin
+          sleep 30
+          nix build ./examples/1-hello-world# --no-update-lock-file
+          sleep 30
+          nix flake lock ./examples/2-bigger-project# \
+            --update-input cargo2nix github:cargo2nix/cargo2nix?rev=$GITHUB_SHA
+          sleep 30
+          nix flake lock ./examples/2-bigger-project# \
+            --update-input nixpkgs github:nixos/nixpkgs/nixos-21.05-darwin
+          sleep 30
           nix build ./examples/2-bigger-project# \
-            --override-input cargo2nix github:cargo2nix/cargo2nix?rev=$GITHUB_SHA \
-            --override-input nixpkgs github:nixos/nixpkgs/nixos-21.05-darwin
-          sleep 60
-          nix build ./examples/3-cross-compiling# \
-            --override-input cargo2nix github:cargo2nix/cargo2nix?rev=$GITHUB_SHA \
-            --override-input nixpkgs github:nixos/nixpkgs/nixos-21.05-darwin
-          sleep 60
-          nix build ./examples/4-independent-packaging# \
-            --override-input cargo2nix github:cargo2nix/cargo2nix?rev=$GITHUB_SHA \
-            --override-input nixpkgs github:nixos/nixpkgs/nixos-21.05-darwin
+            --no-update-lock-file
+          sleep 30
+          nix flake lock ./examples/3-cross-compiling# \
+            --update-input cargo2nix github:cargo2nix/cargo2nix?rev=$GITHUB_SHA
+          sleep 30
+          nix flake lock ./examples/3-cross-compiling# \
+            --update-input nixpkgs github:nixos/nixpkgs/nixos-21.05-darwin
+          sleep 30
+          nix build ./examples/3-cross-compiling# --no-update-lock-file
+          sleep 30
+          nix flake lock ./examples/4-independent-packaging# \
+            --update-input cargo2nix github:cargo2nix/cargo2nix?rev=$GITHUB_SHA
+          sleep 30
+          nix flake lock ./examples/4-independent-packaging# \
+            --update-input nixpkgs github:nixos/nixpkgs/nixos-21.05-darwin
+          sleep 30
+          nix build ./examples/4-independent-packaging# --no-update-lock-file
           fi
 
       - name: use dev shell
