@@ -71,8 +71,7 @@ jobs:
           nix flake lock ./examples/2-bigger-project# \
             --update-input nixpkgs github:nixos/nixpkgs/nixos-21.05-darwin
           sleep 30
-          nix build ./examples/2-bigger-project# \
-            --no-update-lock-file
+          nix build ./examples/2-bigger-project# --no-update-lock-file
           sleep 30
           nix flake lock ./examples/3-cross-compiling# \
             --update-input cargo2nix github:cargo2nix/cargo2nix?rev=$GITHUB_SHA
