@@ -54,7 +54,7 @@ jobs:
             --override-input cargo2nix github:cargo2nix/cargo2nix?rev=$GITHUB_SHA
           if [[ $RUNNER_OS == Linux ]]; then
           nix build ./examples/4-independent-packaging# \
-            --override-input cargo2nix github:cargo2nix/cargo2nix?rev=$GITHUB_SHA \
+            --override-input cargo2nix github:cargo2nix/cargo2nix?rev=$GITHUB_SHA
           else
           nix build ./examples/4-independent-packaging# \
             --override-input cargo2nix github:cargo2nix/cargo2nix?rev=$GITHUB_SHA \
