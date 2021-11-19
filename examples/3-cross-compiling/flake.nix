@@ -21,13 +21,6 @@
       # are used to express the output but not themselves paths in the output.
       let
 
-        # non-cross packages for build use
-        pkgsBuild = import nixpkgs {
-          inherit system;
-          overlays = [(import "${cargo2nix}/overlay")
-                      rust-overlay.overlay];
-        };
-
         # create nixpkgs that contains rustBuilder from cargo2nix overlay
         pkgs = import nixpkgs {
           inherit system;
