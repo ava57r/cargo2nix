@@ -61,7 +61,7 @@ jobs:
             --override-input cargo2nix github:cargo2nix/cargo2nix?rev=$GITHUB_SHA
           sleep 30
           nix flake lock ./examples/1-hello-world# \
-            --override-input nixpkgs github:nixos/nixpkgs/nixos-21.05-darwin
+            --override-input nixpkgs github:nixos/nixpkgs/nixpkgs-21.05-darwin
           sleep 30
           nix build ./examples/1-hello-world# --no-update-lock-file
           sleep 30
@@ -69,7 +69,7 @@ jobs:
             --override-input cargo2nix github:cargo2nix/cargo2nix?rev=$GITHUB_SHA
           sleep 30
           nix flake lock ./examples/2-bigger-project# \
-            --override-input nixpkgs github:nixos/nixpkgs/nixos-21.05-darwin
+            --override-input nixpkgs github:nixos/nixpkgs/nixpkgs-21.05-darwin
           sleep 30
           nix build ./examples/2-bigger-project# --no-update-lock-file
           sleep 30
@@ -77,7 +77,7 @@ jobs:
             --override-input cargo2nix github:cargo2nix/cargo2nix?rev=$GITHUB_SHA
           sleep 30
           nix flake lock ./examples/3-cross-compiling# \
-            --override-input nixpkgs github:nixos/nixpkgs/nixos-21.05-darwin
+            --override-input nixpkgs github:nixos/nixpkgs/nixpkgs-21.05-darwin
           sleep 30
           nix build ./examples/3-cross-compiling# --no-update-lock-file
           sleep 30
@@ -85,7 +85,7 @@ jobs:
             --override-input cargo2nix github:cargo2nix/cargo2nix?rev=$GITHUB_SHA
           sleep 30
           nix flake lock ./examples/4-independent-packaging# \
-            --override-input nixpkgs github:nixos/nixpkgs/nixos-21.05-darwin
+            --override-input nixpkgs github:nixos/nixpkgs/nixpkgs-21.05-darwin
           sleep 30
           nix build ./examples/4-independent-packaging# --no-update-lock-file
           fi
