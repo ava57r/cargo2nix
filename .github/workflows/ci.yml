@@ -76,8 +76,8 @@ jobs:
           nix flake lock ./examples/3-cross-compiling# \
             --override-input cargo2nix github:cargo2nix/cargo2nix?rev=$GITHUB_SHA
           sleep 30
-          nix flake lock ./examples/3-cross-compiling# \
-            --override-input nixpkgs github:nixos/nixpkgs/nixpkgs-21.05-darwin
+          nix flake lock ./examples/3-cross-compiling#
+          #   --override-input nixpkgs github:nixos/nixpkgs/nixpkgs-21.05-darwin
           sleep 30
           nix build ./examples/3-cross-compiling# --no-update-lock-file
           sleep 30
